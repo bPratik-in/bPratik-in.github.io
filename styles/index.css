@@ -1,0 +1,77 @@
+#body {
+  text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 20px;
+  max-width: 800px;
+  min-width: 317px;
+  margin: auto;
+  font-size: 0.94em;
+}
+h1 {
+  font-family: 'Baumans', serif;
+  float: left;
+  font-size: 4em;
+  font-weight: 400;
+  margin: 0;
+}
+.lower {
+  line-height: 1.6;
+}
+header {
+  margin: 2em 2em 2em 1em;
+}
+.heading {
+  padding-left: 1em;
+  margin: 0.3em 0;
+  height: 4.2em;
+}
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+nav>div {
+  float: right;
+  width: 6em;
+  text-align: center;
+}
+nav>div: last-child {
+  border-right: solid thin lightgrey;
+}
+.tab-active>span {
+  padding-bottom: 0.2em;
+  border-bottom: red solid thin;
+}
+.tab-content {
+  margin: 6em auto;
+  display: block;
+  max-width: 31em;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+hr.fancy-line { 
+    border: 0; 
+    height: 1px;
+
+}
+hr.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;
+    top: 1px;
+}
+
+hr.fancy-line:before, hr.fancy-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
+body, hr.fancy-line:after {
+    background: #f4f4f4;
+}

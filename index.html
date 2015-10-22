@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="bpratik.in">
+
+<head>
+	<title>bPratik's Personal Site</title>
+	<script data-require="angular.js@*" data-semver="1.2.26" src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script data-require="ui-router@*" data-semver="0.2.11" src="//angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+	<link href="//fonts.googleapis.com/css?text=bpratik&family=Baumans" rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet" href="styles\index.css" />
+	<script src="scripts\index.js"></script>
+</head>
+
+<body>
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-31499311-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	<div id="body" ng-controller="mainController">
+		<header>
+			<div class="heading">
+				<h1>bpratik</h1>
+			</div>
+			<hr class="fancy-line" />
+			<nav>
+				<div ng-repeat="t in tabs|orderBy:heading:reverse" ng-click="go(t.route)" ng-class="{'tab-active': t.active}">
+					<span class="tab">{{t.heading}}</span>
+				</div>
+			</nav>
+		</header>
+		<div class="container">
+			<div ui-view=""></div>
+		</div>
+	</div>
+	<script type="text/ng-template" id="about-bp.html">
+		<section class="tab-content" id="about-bp">
+			<p>i'm a developer by profession and passion. i <b>imagine</b>. i <b>learn</b>. i <b>create</b>.</p>
+			<p>go ahead, drop by my <span id="twitter" class="social icon"></span><span id="twitter" class="social inline-link"><a href="http://twitter.com/bPratik" target="_blank">twitter@bPratik</a></span><span> | </span><span id="facebook" class="social icon"></span><span id="facebook" class="social inline-link"><a href="http://fb.me/bpratik" target="_blank">facebook/bPratik</a></span><span> | </span><span id="plus" class="social icon"></span><span id="plus" class="social inline-link"><a href="http://goo.gl/lK7GZ" target="_blank">google+bPratik</a></span> <span> | </span><span id="stackoverflow" class="social icon"></span><span id="stackoverflow" class="social inline-link"><a href="http://stackoverflow.com/users/476786/bpratik" target="_blank">stackoverflow&equiv;bPratik</a></span> handles or just sit back and enjoy <span class="inline-link"><a href="http://bPratik.pen.io/" target="_blank">my musings on pen.io</a></span></p>
+			<p>want more? grab my <span class="inline-link"><a href="https://www.dropbox.com/s/4o294wdjrsieuif/bp_cv.pdf?dl=1" target="_blank">cv as a pdf</a></span> or <span class="inline-link"><a href="https://www.dropbox.com/s/b4epygp60xvgvi4/bp_cv.docx?dl=1" target=" _blank">msword</a></span> and send me a "hey!"</p>
+		</section>
+	</script>
+	<script type="text/ng-template" id="portfolio.html">
+		<section class="tab-content" id="portfolio">
+			<h3><strong>Scribble Board </strong></h3>
+			<p>&nbsp;</p>
+			<p>stuff :)</p>
+			<p>&nbsp;</p>
+			<p align="center"><span class="inline-link"><a href="http://www.dyslexiascotlandnortheast.org.uk" target="_blank">DSNE Charity</a></span> || <span class="inline-link"><a href="http://www.cecilhotelmatheran.com" target="_blank">Cecil Hotel</a></span> || <span class="inline-link"><a href="TypO.html">TypO</a></span></p>
+		</section>
+	</script>
+</body>
+
+</html>
