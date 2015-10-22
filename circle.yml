@@ -3,4 +3,4 @@ deployment:
     branch: master
     commands:
       - pwd
-      - ls-a
+      - ls -a
