@@ -2,5 +2,5 @@ deployment:
   production:
     branch: master
     commands:
-      - ls -a
-      - deploy/prod.sh
+      - pwd
+      - ls-a
