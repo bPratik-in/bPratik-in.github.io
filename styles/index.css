@@ -35,7 +35,7 @@ nav>div {
 nav>div: last-child {
   border-right: solid thin lightgrey;
 }
-.tab-active>span {
+.tab-active {
   padding-bottom: 0.2em;
   border-bottom: red solid thin;
 }
@@ -64,7 +64,7 @@ hr.fancy-line:after {
 
 hr.fancy-line:before, hr.fancy-line:after {
     content: '';
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
 }
 
