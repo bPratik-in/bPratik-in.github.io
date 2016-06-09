@@ -13,7 +13,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
 
 app.run(function($rootScope){
     $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
-        ga("set", "page", toState);
+        ga("set", "page", toState.url);
         ga('send', 'pageview');
     });
 })
