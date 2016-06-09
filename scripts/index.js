@@ -11,16 +11,40 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider){
         .state("aboutbp", { url: "/about-bp", templateUrl: "about-bp.html" });
 });
 
+app.run(function($rootScope){
+    $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+        ga("set", "page", toState);
+        ga('send', 'pageview');
+    });
+})
+
 app.controller("mainController", function($scope, $state) {        
    
     $scope.tabs = [
         { heading: "portfolio", route:"portfolio", active:false },
         { heading: "about bp", route:"aboutbp", active:false }
     ];
-
-    $scope.go = function(route){
-        $state.go(route);
+    
+    $scope.handleOutboundDownloads = function (event) {
+        sendAnalyticsEventBeacon("Outbound Download", event.target.href);
     };
+    
+    $scope.handleOutboundSocialLinkClicks = function (event) {
+        sendAnalyticsEventBeacon("Outbound Social Link", event.target.href);
+    };
+    
+    $scope.handleOutboundLinkClicks = function (event) {
+        sendAnalyticsEventBeacon("Outbound Link", event.target.href);
+    };
+    
+    function sendAnalyticsEventBeacon(category, link){
+        ga('send', 'event', {
+            eventCategory: category,
+            eventAction: 'click',
+            eventLabel: link,
+            transport: 'beacon'
+        });
+    }
 
     $scope.active = function(route){
         return $state.is(route);
