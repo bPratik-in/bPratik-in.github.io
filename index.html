@@ -34,8 +34,8 @@
 			</div>
 			<hr class="fancy-line" />
 			<nav>
-				<div ng-repeat="t in tabs|orderBy:heading:reverse" ng-click="go(t.route)" ng-class="{'tab-active': t.active}">
-					<span class="tab">{{t.heading}}</span>
+				<div ng-repeat="t in tabs|orderBy:heading:reverse">
+					<a ui-sref="t.route" ui-sref-active="'tab-active'" class="tab">{{t.heading}}</a>
 				</div>
 			</nav>
 		</header>
