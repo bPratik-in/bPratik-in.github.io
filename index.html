@@ -35,7 +35,7 @@
 			<hr class="fancy-line" />
 			<nav>
 				<div ng-repeat="t in tabs|orderBy:heading:reverse">
-					<a href="" ui-sref="{{t.route}}" ui-sref-active="tab-active" onclick="ga('set', 'page', '/{{t.route}}');ga('send', 'pageview');" class="tab">{{t.heading}}</a>
+					<a href="" ui-sref="{{t.route}}" ui-sref-active="tab-active" class="tab">{{t.heading}}</a>
 				</div>
 			</nav>
 		</header>
@@ -47,8 +47,34 @@
 		<section class="tab-content" id="about-bp">
 			<p>i'm a developer by profession and passion. i <b>imagine</b>. i <b>learn</b>. i <b>create</b>.</p>
 			<p>go ahead, drop by my 
-			<span id="twitter" class="social icon"></span><span id="twitter" class="social inline-link"><a href="http://twitter.com/bPratik" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Social Profile', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">twitter@bPratik</a></span><span> | </span><span id="facebook" class="social icon"></span><span id="facebook" class="social inline-link"><a href="http://fb.me/bpratik" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Social Profile', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">facebook/bPratik</a></span><span> | </span><span id="plus" class="social icon"></span><span id="plus" class="social inline-link"><a href="http://goo.gl/lK7GZ" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Social Profile', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">google+bPratik</a></span> <span> | </span><span id="stackoverflow" class="social icon"></span><span id="stackoverflow" class="social inline-link"><a href="http://stackoverflow.com/users/476786/bpratik" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Social Profile', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">stackoverflow&equiv;bPratik</a></span> handles or just sit back and enjoy <span class="inline-link"><a href="http://bPratik.pen.io/" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Social Profile', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">my musings on pen.io</a></span></p>
-			<p>want more? grab my <span class="inline-link"><a href="https://www.dropbox.com/s/4o294wdjrsieuif/bp_cv.pdf?dl=1" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Download CV PDF', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">cv as a pdf</a></span> or <span class="inline-link"><a href="https://www.dropbox.com/s/b4epygp60xvgvi4/bp_cv.docx?dl=1" target=" _blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Download CV DOC', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">ms word</a></span> and send me a "hey!"</p>
+				<span id="twitter" class="social icon"></span>
+				<span id="twitter" class="social inline-link">
+					<a href="http://twitter.com/bPratik" target="_blank" ng-click="handleOutboundSocialLinkClicks($event)">twitter@bPratik</a>
+				</span><span> | </span>
+				<span id="facebook" class="social icon"></span>
+				<span id="facebook" class="social inline-link">
+					<a href="http://fb.me/bpratik" target="_blank" ng-click="handleOutboundSocialLinkClicks($event)">facebook/bPratik</a>
+				</span><span> | </span>
+				<span id="plus" class="social icon"></span>
+				<span id="plus" class="social inline-link">
+					<a href="http://goo.gl/lK7GZ" target="_blank" ng-click="handleOutboundSocialLinkClicks($event)">google+bPratik</a>
+				</span><span> | </span>
+				<span id="stackoverflow" class="social icon"></span>
+				<span id="stackoverflow" class="social inline-link">
+					<a href="http://stackoverflow.com/users/476786/bpratik" target="_blank" ng-click="handleOutboundSocialLinkClicks($event)">stackoverflow&equiv;bPratik</a>
+				</span> handles or just sit back and enjoy 
+				<span class="inline-link">
+					<a href="http://bPratik.pen.io/" target="_blank" ng-click="handleOutboundSocialLinkClicks($event)">my musings on pen.io</a>
+				</span>
+			</p>
+			<p>want more? grab my 
+				<span class="inline-link">
+					<a href="https://www.dropbox.com/s/4o294wdjrsieuif/bp_cv.pdf?dl=1" target="_blank" ng-click="handleOutboundDownloads($event)">cv as a pdf</a>
+				</span> or 
+				<span class="inline-link">
+					<a href="https://www.dropbox.com/s/b4epygp60xvgvi4/bp_cv.docx?dl=1" target=" _blank" ng-click="handleOutboundDownloads($event)">ms word</a>
+				</span> and send me a "hey!"
+			</p>
 		</section>
 	</script>
 	<script type="text/ng-template" id="portfolio.html">
@@ -57,7 +83,7 @@
 			<p>&nbsp;</p>
 			<p>stuff :)</p>
 			<p>&nbsp;</p>
-			<p align="center"><span class="inline-link"><a href="http://www.dyslexiascotlandnortheast.org.uk" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Portfolio', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">DSNE Charity</a></span> || <span class="inline-link"><a href="http://www.cecilhotelmatheran.com" target="_blank" onclick="ga('send', { hitType: 'event', eventCategory: 'Outbound Portfolio', eventAction: 'click', eventLabel: this.href, transport: 'beacon' });">Cecil Hotel</a></span> || <span class="inline-link"><a href="//www.bpratik.in/TypO.html">TypO</a></span></p>
+			<p align="center"><span class="inline-link"><a href="http://www.dyslexiascotlandnortheast.org.uk" target="_blank" ng-click="handleOutboundLinkClicks($event)">DSNE Charity</a></span> || <span class="inline-link"><a href="http://www.cecilhotelmatheran.com" target="_blank" ng-click="handleOutboundLinkClicks($event)">Cecil Hotel</a></span> || <span class="inline-link"><a href="//www.bpratik.in/TypO.html">TypO</a></span></p>
 		</section>
 	</script>
 </body>
