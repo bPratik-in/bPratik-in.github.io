@@ -1,5 +1,13 @@
 {
-	"scripts": {
-		"test": "echo \"Error: no test specified.\""
-	}
+  "name": "bpratik-in",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.1"
+  }
 }

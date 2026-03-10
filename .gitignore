@@ -162,6 +162,10 @@ ClientBin/
 *.publishsettings
 node_modules/
 bower_components/
+dist/
+.env
+.env.*
+!.env.example
 
 # RIA/Silverlight projects
 Generated_Code/
