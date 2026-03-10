@@ -1,4 +1,4 @@
-# robots.txt for http://bPratik.in generated at http://www.mcanerin.com
+# robots.txt for https://bPratik.in
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
